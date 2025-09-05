@@ -2,3 +2,5 @@ target/
 Secrets*.toml
 .DS_Store
 **/*.rs.bk
+.env
+.cargo/*
