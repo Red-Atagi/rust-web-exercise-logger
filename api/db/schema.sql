@@ -9,6 +9,5 @@ CREATE TABLE IF NOT EXISTS users
     is_active BOOLEAN DEFAULT FALSE,
     is_staff BOOLEAN DEFAULT FALSE,
     is_superuser BOOLEAN DEFAULT FALSE,
-    icon text NOT NULL,
     date_joined timestamp with time zone default CURRENT_TIMESTAMP
 );

@@ -1,6 +1,5 @@
 use actix_web::{get, web::ServiceConfig};
 use shuttle_actix_web::ShuttleActixWeb;
-use api_lib::health::health;
 use sqlx::Executor;
 
 
@@ -14,7 +13,7 @@ async fn main(
 
     let pool = actix_web::web::Data::new(pool);
     let config = move |cfg: &mut ServiceConfig| {
-        cfg.app_data(pool).service(health);
+        cfg.app_data(pool).configure(api_lib::users::service);
     };
 
     Ok(config.into())
